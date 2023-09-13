@@ -325,3 +325,9 @@ CSGOFloat config file location
 ### `-s`/`--steam_data` (default [node-steam-user config directory](https://github.com/DoctorMcKay/node-steam-user#datadirectory))
 
 node-steam-user config directory
+
+# Building New Docker Image
+Run this command to build multi-arch image. You have to be logged in the ECR
+```bash
+docker buildx build --platform linux/amd64,linux/arm64 -t 028739291296.dkr.ecr.eu-central-1.amazonaws.com/float-service-prod:latest . --push
+```
